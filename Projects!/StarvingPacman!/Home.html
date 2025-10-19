@@ -1,0 +1,118 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <title>Starving Pacman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Bitcount+Grid+Double:wght@100..900&family=MedievalSharp&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: black;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        #center-idea {
+            font-size: clamp(20px,10vw,80px);
+            color: rgb(255, 242, 0);
+            font-family:Bitcount Grid Double;
+            font-weight: 300;
+            width: fit-content;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-self: center;
+            justify-self: center;
+            flex-wrap: wrap;
+            padding-top: 15%;
+        }
+
+        .buttons {
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            align-self: center;
+            justify-self: center;
+            gap: 20px;
+        }
+
+        #pacman-body {
+            background: yellow;
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            animation: movearound 5s infinite linear;
+        }
+
+        #eye {
+            background: black;
+            height: 12px;
+            width: 12px;
+            border-radius: 10px;
+            position: absolute;
+            left: 30%;
+            top: 25%;
+            animation: blink 2s infinite;
+        }
+
+        #mouth {
+            width: 0;
+            height: 0;
+            border-top: 30px solid transparent;
+            border-bottom: 30px solid transparent;
+            border-left: 50px solid black;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: rotateY(180deg);
+            animation: bite 4s infinite ease;
+        }
+
+        @keyframes movearound {
+            0%
+            100% {transform: translate(0,0) rotate(0deg); }
+            25% {transform: translate(calc(100vw - 100px)); }
+
+            50% {transform: translate(calc(100vw - 100px), calc(100vh - 100px)); }
+
+            75% {transform: translate(0,calc(100vh - 100px)); }
+        }
+
+        @keyframes blink {
+           0% 
+           100% {height: 10px; width: 12px; border-radius: 10px; background: black;}
+           50% {height: 2px; width: 12px; border-radius: 10px; background: black;}
+        }
+
+        @keyframes bite {
+            0% 
+            100% {transform: rotateZ(0deg);}
+            50% {transform: rotateZ(180deg) ;}
+        }
+    </style>
+    <body>
+        <h1 id="center-idea">STARVING PACMAN</h1>
+        <div class="buttons">
+            <button  >New Game</button>
+            <button>Difficulty</button>
+            <button>High Scores</button>
+            <button>Help</button>
+            <button>About</button>
+        </div>
+        <div id="pacman-body">
+            <div id="eye"></div>
+            <div id="mouth"></div>
+        </div>
+ </html>
