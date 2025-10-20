@@ -7,8 +7,8 @@ let accountState; // output will be undefined!
 console.log(accountId)
 //accountID = 2 not allowed
 
-accountEmail = "hc@hc.com"
+accountEmail = "rc@rc.com"
 accountPassword = "21212121"
 accountCity = "Bengaluru"
 
-console.table([accountId+1, accountEmail, accountPassword, accountCity, accountState])
+console.table([accountId, accountEmail, accountPassword, accountCity, accountState])
