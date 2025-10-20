@@ -34,5 +34,5 @@ console.log("B", myArr);
 
 
 const myN2 = myArr.splice(1, 3);
-console.log("C", myArr)
-console.log(myN2); 
+console.log("C", myArr) //modifies original array by removing elements!
+console.log(myN2);
