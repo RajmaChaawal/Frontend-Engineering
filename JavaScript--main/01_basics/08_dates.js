@@ -16,3 +16,17 @@ let myTimeStamp = Date.now();
 
 console.log(myTimeStamp);
 console.log(myCreateDate.getTime());
+console.log(Math.floor(Date.now()/1000)); //Seconds since 1 January 1970 (UNIX EPOCH TIME!)
+
+
+let newDate = new Date();
+console.log(newDate);
+console.log(newDate.getMonth()+1); //Months are 0 indexed!
+console.log(newDate.getDay());
+
+// `${newDate.getDay()}and the time`
+
+newDate.toLocaleString('default', {
+    weekday: "long",
+    timeZone: "UTC",
+}) //to customize date output! used in locales! very important!
