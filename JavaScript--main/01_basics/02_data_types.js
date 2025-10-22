@@ -4,7 +4,7 @@
 console.log(3 + 3)
 console.log("Lucky")//code readability should be high! that is line wise! as there is no scarcity of lines to write a code!
 
-let name = "hitesh"
+let name = "Rajma Chaawal"
 let age = 18
 let isLoggedIn = false
 let State = null
@@ -32,7 +32,7 @@ const bigNumber = 3456543576654356754;
 console.log(typeof null); //NULL IS AN OBJECT! *INTERVIEW QUESTION!
 const heroes = ["shaktimaan", "nagraj", "doga"]; //Array Declaration and Initialisation!
 let myObj = {
-    name: "hitesh",
+    name: "rajma",
     age: 22,
 } // Object Declaration and Properties!
 
