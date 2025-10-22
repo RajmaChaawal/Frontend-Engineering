@@ -13,14 +13,12 @@
         background: black;
         color: white;
         font-family: Raleway;
+        width: 100vw;
         margin: 0;
         padding: 0;
         border: 0;
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        width: 100vw;
-        overflow-x: hidden;
         justify-content: center;
     }
     #heading_main {
@@ -55,7 +53,7 @@
         transition: all 0.3s ease;
     }
     .navbar a:hover {
-        filter: drop-shadow(0 0 10px white);
+        filter: drop-shadow(0 0 20px white);
         transform: scale(1.4);
     }
     main {
@@ -67,6 +65,7 @@
         justify-content: center;
     }
     #Sun {
+        position: static;
         margin-bottom: 5%;
         height: 100px;
         width: 100px;
@@ -85,15 +84,14 @@
         filter: drop-shadow(0 0 10px white);
     }
     .Planets{
+        position: static;
         margin-bottom: 5%;
+        overflow: wrap;
     }
-    .Planets h4{
-        text-align: center;
+    .Planets-Title{
         display: flex;
-        height: fit-content;
-        width: fit-content;
-        position: relative;
-        top: 50%;
+        justify-content: center;
+        align-items: bottom;
     }
     #Mercury{
         height: 20px;
@@ -129,8 +127,8 @@
         height: 33px;
         width: 33px;
         border-radius: 50%;
-        background: radial-gradient(ellipse at center, blue 25%, green 65%);
-        box-shadow: 0 0 5px 1px skyblue;
+        background: linear-gradient(135deg, blue 25%, green 65%);
+        box-shadow: 0 0 10px 2px rgb(135, 142, 235);
         margin-top: 5%;
         display: flex;
         justify-content: center;
@@ -148,6 +146,48 @@
         background: radial-gradient(circle, rgba(202, 105, 41, 0.893) 0%, rgb(226, 104, 22) 50%, rgba(125, 37, 5, 0.849) 100%);
         transition: all 0.3s ease;
     }
+    #Mars:hover {
+        transform: scale(1.5);
+        filter: drop-shadow(0 0 5px rgba(125, 37, 5, 0.849));
+    }
+    #Jupiter {
+        position: relative;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        background: linear-gradient(180deg, #3B220D 10%, #C68642 20%, #8B5A2B 40%, #C68642 20%, #5C3A1A 80%);
+        box-shadow: 0 0 5px 2px #dc7c49;
+        display: flex;
+        justify-content: center;
+        transition: all 0.3s ease;
+        background-repeat: repeat;
+    }
+    #Great-Red-Spot {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% -50%) rotateZ(180deg);
+        height: 16%;
+        width: 32%;
+        background: radial-gradient(ellipse, #762613, #a14611, #68380b);
+        box-shadow: 0 0 8px 2px rgba(61, 19, 4, 0.849);
+        border-radius: 50%;
+    }
+    #Jupiter-Rings {
+        position: absolute;
+        top: 20%;
+        left: -50%;
+        transform: rotate(10deg);
+        background-color: transparent;
+        border: 1px solid rgba(200, 200, 200, 0.636);
+        height: 50%;
+        width: 200%;
+        border-radius: 50%;
+    }
+    #Jupiter:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 10px rgba(125, 37, 5, 0.849));
+    }
 </style>
 <body>
     <h1 class="site_title" id="heading_main">- SOLAR SYSTEM -</h1>
@@ -163,10 +203,15 @@
     </nav>
     <main id="space">
         <div class="Star" id="Sun"><h4>SUN</h4></div>
-        <div class="Planets" id="Mercury"><h4>MERCURY</h4></div>
-        <div class="Planets" id="Venus"><h4>VENUS</h4></div>
-        <div class="Planets" id="Earth"><h4>EARTH</h4></div>
-        <div class="Planets" id="Mars"><h4>MARS</h4></div>
+        <div class="Planets" id="Mercury"><h4 class="Planet-Title">MERCURY</h4></div>
+        <div class="Planets" id="Venus"><h4 class="Planet-Title">VENUS</h4></div>
+        <div class="Planets" id="Earth"><h4 class="Planet-Title">EARTH</h4></div>
+        <div class="Planets" id="Mars"><h4 class="Planet-Title">MARS</h4></div>
+        <div class="Planets" id="Jupiter">
+            <h4 class="Planet-Title">JUPITER</h4>
+            <div class="Rings" id="Jupiter-Rings"></div>
+            <div id="Great-Red-Spot"></div>
+        </div>
     </main>
 </body>
 </html>
