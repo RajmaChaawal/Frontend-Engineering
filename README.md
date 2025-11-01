@@ -6,12 +6,12 @@ This repository is designed to help you deepen your understanding of modern fron
 
 ## 📁 Repository Structure  
 Here’s how the contents are organised:
-/Assignments! → Weekly or themed assignments to sharpen skills
-/Classwork! → Code and examples explored in class sessions
-/Experiments! → Sandbox projects & fun prototypes
-/JavaScript-main → Core JavaScript practice and sink-in work
-/Projects! → Larger scale frontend builds bringing it all together
-README.md → This file
+/Assignments! → Weekly or themed assignments to sharpen skills /n
+/Classwork! → Code and examples explored in class sessions /n
+/Experiments! → Sandbox projects & fun prototypes /n
+/JavaScript-main → Core JavaScript practice and sink-in work /n
+/Projects! → Larger scale frontend builds bringing it all together /n
+README.md → This file /n
 
 
 Feel free to explore each folder to understand the progression from fundamentals to full builds.
