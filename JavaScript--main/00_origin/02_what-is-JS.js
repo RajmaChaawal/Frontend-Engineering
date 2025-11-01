@@ -21,8 +21,22 @@
 //  ~ Games & Graphics (Canvas, WebGL, Three.js)
 //  ~ AI & ML (TensorFlow.js)
 
-// 1 - "Let's see how JS actually works" :
+// 1 - "Components of JS" :
 // -> JS is an engine standardized by  ES2024, that every browser follows!
 // -> JS engine contains a CallStack and Heap!
 // -> The Callstack is responsible for code executes with execution context!
 // -> Heap is responsible for String objects in an unstructured memory pool, that are necessit for our application!
+
+
+// 2 - "Scope" :
+// -> Space where a variable is visible!
+// -> Type of Scopes in JS :
+//  1. Global!
+//  2. Functional!
+//  3. Block Scope -> let/const inside {} are visible to that {} only!
+//  4. Lexial Scope -> Nested functions have access to preceeding functions!
+// -> Scope Chain is the hierarchical structure or order in which the engine searches for a variable in a code!
+
+// 3 - Temporal Dead Zone -> zone where a variable is inaccessible for instance : let / const are hoisted but not initialized, you cannot use them before the declaration!
+
+// 4 - Closure -> The storing of variables of outer functions, to be accessed later in inner functions!
