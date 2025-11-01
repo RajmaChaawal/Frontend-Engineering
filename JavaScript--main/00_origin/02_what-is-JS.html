@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+            :root {
+    /* Primary brand color inspired by JavaScript */
+    --js-yellow: #f7df1e;
+
+    /* Background shades */
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+
+    /* Text colors */
+    --text-main: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-accent: var(--js-yellow);
+
+    /* Accent & highlight colors */
+    --accent-blue: #00bcd4;
+    --accent-green: #00e676;
+    --accent-orange: #ff9100;
+    --accent-pink: #ff4081;
+
+    /* Shadows & borders */
+    --shadow-glow: 0 0 20px rgba(247, 223, 30, 0.2);
+    --border-accent: 1px solid rgba(247, 223, 30, 0.3);
+    }
+
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        margin: 0;
+        padding: 40px;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: var(--text-accent);
+        text-shadow: var(--shadow-glow);
+        border-bottom: var(--border-accent);
+        font-weight: 500;
+    }
+
+    h2 {
+        color: var(--accent-blue);
+        font-weight: 400;
+    }
+
+    h3 {
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+
+    h4 {
+        color: var(--text);
+        font-weight: 200;
+    }
+</style>
+<body>
+<h1>Lecture 2 => What really is JS?</h1>
+<h2>JAVASCRIPT is a : -<h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ High Level -> Highly Portable and very close to human language!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ Prototype based Obj-Oriented -> Object Oriented Programming!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ MultiiParadigm -> multiple approaches for programming!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ Interpreted / Just-in-Time Compiled -> Compiled and then Executed line-by-line!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ Dynamic -> datatype can change at runtime and not fixed!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ Single Threaded -> cannot execute multiple operations at a once!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;~ Garbade Collected -> automatically manages memory allocation and deallocation</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- programming language with : -</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ first class functinos -> functions that can be assigned to a variable and  can be passed to other functions!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;~ non-blocking event-loop concurrency model!</h3>
+
+
+<h2>-> Originally meant to be used by browsers!</h2>
+<h2>-> Today, its everywhere :-</h2>
+<h3>&nbsp;&nbsp;~ Client-Side (Browser)</h3>
+<h3>&nbsp;&nbsp;~ Desktop Apps (Electron.js)</h3>
+<h3>&nbsp;&nbsp;~ Mobile Apps (React Native, Ionic)</h3>
+<h3>&nbsp;&nbsp;~ Server Side (Node.js)</h3>
+<h3>&nbsp;&nbsp;~ Games & Graphics (Canvas, WebGL, Three.js)</h3>
+<h3>&nbsp;&nbsp;~ AI & ML (TensorFlow.js)</h3>
+
+<h2>1 - "Components of JS" :</h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> JS is an engine standardized by  ES2024, that every browser follows!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> JS engine contains a CallStack and Heap!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> The Callstack is responsible for code executes with execution context!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> Heap is responsible for String objects in an unstructured memory pool, that are necessit for our application!</h3>
+
+
+<h2>2 - "Scope" :</h2>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> Space where a variable is visible!</h3>
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;-> Type of Scopes in JS :</h3>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Global!</h4>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Functional!</h4>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Block Scope -> let/const inside {} are visible to that {} only!</h4>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4. Lexial Scope -> Nested functions have access to preceeding functions!</h4>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Scope Chain is the hierarchical structure or order in which the engine searches for a variable in a code!</h4>
+
+<h2>3 - Temporal Dead Zone -><h2><h3>zone where a variable is inaccessible for instance : let / const are hoisted but not initialized, you cannot use them before the declaration!</h3>
+
+<h2>4 - Closure -><h2> <h3>The storing of variables of outer functions, to be accessed later in inner functions!</h3>   
+</body>
+</html>

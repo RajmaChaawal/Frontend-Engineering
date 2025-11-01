@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        :root {
+    /* Primary brand color inspired by JavaScript */
+    --js-yellow: #f7df1e;
+
+    /* Background shades */
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+
+    /* Text colors */
+    --text-main: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-accent: var(--js-yellow);
+
+    /* Accent & highlight colors */
+    --accent-blue: #00bcd4;
+    --accent-green: #00e676;
+    --accent-orange: #ff9100;
+    --accent-pink: #ff4081;
+
+    /* Shadows & borders */
+    --shadow-glow: 0 0 20px rgba(247, 223, 30, 0.2);
+    --border-accent: 1px solid rgba(247, 223, 30, 0.3);
+    }
+
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        margin: 0;
+        padding: 40px;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: var(--text-accent);
+        text-shadow: var(--shadow-glow);
+        border-bottom: var(--border-accent);
+        font-weight: 500;
+    }
+
+    h2 {
+        color: var(--accent-blue);
+        font-weight: 400;
+    }
+
+    h3 {
+        color: var(--text-secondary);
+        font-weight: 300;;
+    }
+</style>
+<body>
+    <h1>Lecture 3 => Working of JS!</h1><br>
+    <h2>1 - Execution Context :</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> An Execution Context is the environment in which your code gets executed!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> There are two Execution Contexts : 1. Global (GEC) 2. Functional (FEC)</h2>
+    <h2>-> When you run JS file for the first time :</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. A GEC is created!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. GEC sets up :<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> A Global Object -> window in browsers!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Memory Space for al variables and functions!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3. Two phases in EC :<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1. Creation Phase :<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> allocates memory for variables and functions!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> var -> undefined!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> let and const are set aside in TDZ!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Entire function definitions stored in memory!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2. Execution Phase :<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Execution of each statement!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> A function Execution Context in separately created, if a function is called!</h3><br>
+    <h2>~ This understanding of creating, stacking, and destroying EC's help you understand :</h2>
+    <h3>&nbsp;&nbsp;&nbsp;&nbsp;-> Why hoisting happens!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;-> How closures keeps memory alive!<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;-> How event loop runs after synchronous code!</h3>
+</body>
+</html>

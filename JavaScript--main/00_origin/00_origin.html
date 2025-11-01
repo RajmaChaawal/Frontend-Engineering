@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    :root {
+    /* Primary brand color inspired by JavaScript */
+    --js-yellow: #f7df1e;
+
+    /* Background shades */
+    --bg-dark: #0d0d0d;
+    --bg-card: #1a1a1a;
+
+    /* Text colors */
+    --text-main: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-accent: var(--js-yellow);
+
+    /* Accent & highlight colors */
+    --accent-blue: #00bcd4;
+    --accent-green: #00e676;
+    --accent-orange: #ff9100;
+    --accent-pink: #ff4081;
+
+    /* Shadows & borders */
+    --shadow-glow: 0 0 20px rgba(247, 223, 30, 0.2);
+    --border-accent: 1px solid rgba(247, 223, 30, 0.3);
+    }
+
+    body {
+        background-color: var(--bg-dark);
+        color: var(--text-main);
+        margin: 0;
+        padding: 40px;
+        font-family: 'Segoe UI', sans-serif;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h1 {
+        color: var(--text-accent);
+        text-shadow: var(--shadow-glow);
+        border-bottom: var(--border-accent);
+        font-weight: 500;
+    }
+
+    h2 {
+        color: var(--accent-blue);
+        font-weight: 400;
+    }
+
+    h3 {
+        color: var(--text-secondary);
+        font-weight: 300;
+    }
+        
+    </style>
+</head>
+<body>
+    <h1>Lecture 1 => ORIGIN OF JAVASCRIPT!</h1>
+    <h2>1 - JS was originally created by Brendon Eich in 1995 at Netscape!</h2>
+    <h3>-> As a result Microsoft created its own JScript for Internet Explorer!<br>
+        -> Both of these models for similar but incompatible is some significant ways!<br>
+        -> Consequentially, it became a mess for developers, because code was inconsistent for different browsers!</h3>
+    <br>
+    <br>
+
+    <h2>2 - ECMAScript :</h2>
+    <h3>-> In 1997, Netscape submitted JavaScript to a standards organisation "ECMA International"!<br>
+        -> With a goal of creating standardized version of JS, in order to standardize the working of JS on all browsers!<br>
+        -> This standard was named ES (ECMAScript)!<br>
+        ~ ECMASCRIPT = official Specification!<br>
+        ~ JavaScript = the actual implementation of that spec in browsers!</h3>
+
+    <h2>3 - Revolution of ECMAScript :</h2>
+    <h3>-> Cross-Browser Compatibility!<br>
+        -> Consistency for future growth!<br>
+        -> Single Reference!
+    </h3>
+
+    <h2>4 - Evolution of ECMAScript Versions :</h2>
+    <h3>-> ES1 (1997) -> 1st edition<br>
+        -> ES3 (1999) -> introduced regular expression, try/catch!<br>
+        -> ES5 (2009) -> strict mode, JSON support, getters/setter!<br>
+        -> ES6 (2015) -> "A big revolution" --> Arrow function, classes, promises, let, const, modules!<br>
+        -> Yearly updates afterwards till ES2024!<br>
+        -> JS is backwards compatible! (I.E. A 2089 JS code ------Works on------> 2020 engine BUT A 2020 JS code -X-X-X-Works on-X-X-X-> 2089 JS version!)</h3>
+</body>
+</html>
