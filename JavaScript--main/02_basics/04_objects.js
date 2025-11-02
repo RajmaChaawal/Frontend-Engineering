@@ -92,4 +92,3 @@ console.log(Instructor)
 ] //Array of objects
 
 // From an API we may get data in form of objects, Tree or Array of Objects!
-
