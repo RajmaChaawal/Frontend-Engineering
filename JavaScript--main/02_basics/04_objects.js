@@ -37,6 +37,18 @@ const obj4 = {
 
 //const obj3 = Object.assign({}, obj1, obj2, obj4) //{} is an optional parameter that signifies all sources are targetted to be inserted {} in new object!
 
+// Spread and Rest Operators --- Smarter Data Handling!
+
+// -> used to extract values of arrays/objects easily using Destructuring
+//  ->Spread Operators (...)
+//  ->Rest Operators (...)
+
+const arr = [1,2,3,4,5,6,7,8,9];
+const [first, second, ...rest] = arr;
+console.log(first,second);
+console.log(rest);
+console.log(arr);
+
 const obj3 = {...obj1, ...obj2} //spreads and combines objects
 
 console.log(obj3)
@@ -85,10 +97,10 @@ console.log(Instructor)
 //     "price": "free"
 // } //JSON format
 
-[
-    {},
-    {},
-    {}
-] //Array of objects
+// [
+//     {},
+//     {},
+//     {}
+// ] //Array of objects
 
 // From an API we may get data in form of objects, Tree or Array of Objects!
