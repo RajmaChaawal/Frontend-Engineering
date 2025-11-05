@@ -6,9 +6,33 @@
     <title>Document</title>
 </head>
 <body>
-    <h1 id="title">Hi, this is a stupid site</h1>
-    <button id="btn">Press Me!</button>
+    <ul>
+        <li class="list-items">hi</li>
+        <li class="list-items">hii</li>
+        <li class="list-items">hiii</li>
+        <li class="list-items">hiiii</li>
+    </ul>
+    <script>
+// Lecture 4 : DOM and DOM Manipulation!
+// -> The JS browser generally converts the HTML code into a DOM Tree! *DOCUMENT OBJECT MODEL TREE*, which is primarily a Tree of HTML tags
+// -> Sibling tags are adjacent and Parent-Child are heirarchical!
 
-    <script src="Lecture 4.js"></script>
+// BROSWER CONSOLE TEST: 
+console.log("Hello User!")
+
+// DOM methods:
+const mainHeading = document.getElementById("title") //identifies the tag with this ID selector in linked HTML file!
+
+//Changing text in selected tag!
+// mainHeading.textContent = "Another Rubbish!"
+
+// TEST 2:
+const button = document.getElementById("btn")
+button.onclick = function () {
+    mainHeading.textContent = "And you are a stupid of the highest order!";
+}
+
+
+    </script>
 </body>
 </html>
