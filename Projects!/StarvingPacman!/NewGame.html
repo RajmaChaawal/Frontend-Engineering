@@ -15,6 +15,7 @@
             border: 0;
             padding: 0;
             overflow: hidden;
+            position: relative;
             height: 100vh;
         }
 
@@ -63,12 +64,10 @@
             width: 100px;
             height: 100px;
             border-radius: 50px;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 100px;
+            left: 100px;
             position: absolute;
-            animation: movearound 5s infinite linear;
+            animation: moveUp infinite linear;
         }
 
         #eye {
@@ -76,9 +75,9 @@
             height: 12px;
             width: 12px;
             border-radius: 10px;
-            position: absolute;
-            left: 30%;
-            top: 25%;
+            position: relative;
+            left: 30px;
+            top: 25px;
             animation: blink 2s infinite;
         }
 
@@ -88,21 +87,27 @@
             border-top: 30px solid transparent;
             border-bottom: 30px solid transparent;
             border-left: 50px solid black;
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: rotateY(180deg);
-            animation: bite 4s infinite ease;
+            position: relative;
+            top: 25px;
+            left: 50px;
+            animation: bite 4s infinite ease; 
+        }
+        
+        @keyframes moveUp {
+            0%, 100% {transform: translateX(0) rotate(90deg);}
+            50% {transform: translateX()}
         }
 
-        @keyframes movearound {
-            0%
-            100% {transform: translate(0,0) rotate(0deg); }
-            25% {transform: translate(calc(100vw - 100px)); }
+        @keyframes moveDown {
 
-            50% {transform: translate(calc(100vw - 100px), calc(100vh - 100px)); }
+        }
 
-            75% {transform: translate(0,calc(100vh - 100px)); }
+        @keyframes moveRight {
+
+        }
+
+        @keyframes moveLeft {
+
         }
 
         @keyframes blink {
@@ -112,22 +117,31 @@
         }
 
         @keyframes bite {
-            0% 
-            100% {transform: rotateZ(0deg);}
-            50% {transform: rotateZ(180deg);}
+            0% ,100% {transform: rotateX(0deg) rotateY(180deg);}
+            50% {transform: rotateX(180deg) rotateY(180deg);}
         }
     </style>
     <body>
-        <h1 id="center-idea">STARVING PACMAN</h1>
-        <div class="buttons-container">
-            <button class="buttons">New Game</button>
-            <button class="buttons">Difficulty</button>
-            <button class="buttons">High Scores</button>
-            <button class="buttons">Help</button>
-            <button class="buttons">About</button>
-        </div>
         <div id="pacman-body">
             <div id="eye"></div>
             <div id="mouth"></div>
         </div>
+        
+
+        <script>
+            let x = 100;
+            let y = 100;
+            const pacman = document.querySelector("#pacman-body");
+            document.addEventListener('keydown', e => {
+                if (e.key === 'ArrowUp') y -= 20;
+                if (e.key === 'ArrowDown') y += 20;
+                if (e.key === 'ArrowLeft') x -= 20;
+                if (e.key === 'ArrowRight') x += 20;
+                console.log(x, y);
+                
+                pacman.style.top = y + 'px';
+                pacman.style.left = x + 'px';
+            });
+        </script>
+    </body>
  </html>

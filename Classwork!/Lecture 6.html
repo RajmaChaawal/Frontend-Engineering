@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //PROTOYPE BASED PROGRAMMING BEFORE ES6 :
+        const Person = function (name , age) {
+            this.firstName = name;
+            this.age = age;
+        }
+        Person.prototype.introduce = function() {
+            console.log(`Hi, my name is ${this.firstName} and I am ${this.age} years new`);
+        }
+
+        const person1 = new Person("Nitin", 20);
+        person1.introduce();
+        console.log(person1);
+
+        //PROTOTYPE BASED PROGRAMMING AFTER ES6 :
+        class Human {
+            constructor(name, age) {
+                this.firstName = name;
+                this.age = age;
+            }
+            introduce() {
+                console.log(``)
+            }
+        }
+    </script>
+</body>
+</html>
