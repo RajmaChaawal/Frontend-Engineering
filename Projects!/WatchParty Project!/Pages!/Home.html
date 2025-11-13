@@ -3,66 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Bitcount+Grid+Double:wght@100..900&family=MedievalSharp&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
     <style>
-        body{
-            display:flex;
+        /* ---------- Base Styles ---------- */
+        body {
+            display: flex;
+            flex-wrap: wrap;
             overflow: hidden;
             height: 100vh;
             width: 100vw;
             margin: 0;
             border: 0;
             padding: 0;
-            font-family: Quicksand;
+            font-family: 'Quicksand';
             background: linear-gradient(180deg, rgb(247, 247, 247), rgba(149, 0, 255, 0.618));
         }
-        .navbar{
-            display:flex;
-            height: 5vw;
-            width: 100vw;
-            background: linear-gradient(90deg,violet, rgb(203, 148, 206), rgba(149, 0, 255, 0.618));
-            border-radius: 8px;
-            align-items: center;
-        }
-        #site_title{
-            color: rgb(6, 21, 99);
-            position: relative;
-            left: 6%;
-            text-transform: solid ;
-        }
-        .nav_btn{
+
+        .navbar {
             display: flex;
-            position: relative;
-            left: 70%;
-            margin-left: 2%;
-            font-family: Quicksand;
+            justify-content: flex-start;
+            align-items: center;
+            height: 5vw;
+            width: 100%;
+            background: linear-gradient(90deg, violet, rgb(203, 148, 206), rgba(149, 0, 255, 0.618));
             border-radius: 8px;
-            border-style: hidden;
-            padding: 0.5%;
+            box-shadow: 0 0 8px 2px rgb(173, 18, 173);
+            padding: 0 5%;
+        }
+
+        #site_title {
+            color: rgb(32, 5, 75);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            flex: 1;
+        }
+
+        .nav_btn {
+            font-family: Quicksand;
+            border: none;
+            border-radius: 8px;
+            padding: 0.5em 1.2em;
+            margin-left: 2em;
             color: rgb(6, 21, 99);
             font-weight: 600;
             font-size: 1em;
+            background: rgba(255, 255, 255, 0.75);
             box-shadow: 0px 0px 5px rgb(65, 6, 99);
             transition: all 0.2s ease;
+            cursor: pointer;
         }
-        .nav_btn:hover{
+
+        .nav_btn:hover {
             transform: scale(1.1);
+        }
+
+        /* ---------- Responsive Stylses ---------- */
+
+        /* 🖥️ Laptops / Desktops (≥ 1025px) */
+        @media (min-width: 1025px) {
+            .navbar {
+                height: 4vw;
+                padding: 0 6%;
+            }
+
+            .nav_btn {
+                font-size: 1em;
+                padding: 0.5em 1.5em;
+            }
+
+            #site_title {
+                font-size: 2em;
+            }
+        }
+
+        /* 💻 Tablets (between 601px and 1024px) */
+        @media (max-width: 1024px) and (min-width: 601px) {
+            .navbar {
+                flex-wrap: wrap;
+                justify-content: center;
+                height: 20%;
+                padding: 1em;
+            }
+
+            #site_title {
+                width: 100%;
+                text-align: center;
+                font-size: 1.8em;
+                margin-bottom: 0.5em;
+            }
+
+            .nav_btn {
+                font-size: 0.95em;
+                padding: 0.6em 1.2em;
+                margin: 0.5em;
+            }
+        }
+
+        /* 📱 Phones (≤ 600px) */
+        @media (max-width: 600px) {
+            body {
+                height: 100vh;
+                width: 100vw;
+            }
+
+            #site_title {
+                font-size: 40%;
+            }
+
+            .navbar {
+                height: 10%;
+                font-size: 30%;
+            }
+
+
         }
     </style>
 </head>
+
 <body>
     <nav class="navbar">
         <h1 id="site_title">WATCHPARTY</h1>
-        <button href="#subscription" class="nav_btn">Subscribe +</button>
-        <button href="#login" class="nav_btn">Login</button>
+        <button class="nav_btn">Subscribe +</button>
+        <button class="nav_btn">Login</button>
     </nav>
-    <main>
-        <section>
-            <img src="" id="sample_image1" class="sample_images">
-        </section>
-    </main>
+    <main></main>
 </body>
 </html>
