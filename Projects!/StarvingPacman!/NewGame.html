@@ -64,10 +64,9 @@
             width: 100px;
             height: 100px;
             border-radius: 50px;
-            top: 100px;
-            left: 100px;
-            position: absolute;
-            animation: moveUp infinite linear;
+            top: 0;
+            left: 0;
+            position: relative;
         }
 
         #eye {
@@ -90,24 +89,27 @@
             position: relative;
             top: 25px;
             left: 50px;
-            animation: bite 4s infinite ease; 
+            animation: bite 3s infinite ease; 
         }
         
         @keyframes moveUp {
-            0%, 100% {transform: translateX(0) rotate(90deg);}
-            50% {transform: translateX()}
+            from {transform: translateY(90vh) rotate(-90deg);}
+            to {transform: translateY(-90vh) rotate(-90deg);}
         }
 
         @keyframes moveDown {
-
+            from {transform: translateY(-90vh) rotate(90deg);}
+            to {transform: translateY(90vh) rotate(90deg);}
         }
 
         @keyframes moveRight {
-
+            from {transform: translateX(-90vw);}
+            to {transform: translateX(100vw);}
         }
 
         @keyframes moveLeft {
-
+            from {transform: translateX(100vw) rotateY(180deg);}
+            to {transform: translateX(-90vw) rotateY(180deg);}
         }
 
         @keyframes blink {
@@ -133,14 +135,12 @@
             let y = 100;
             const pacman = document.querySelector("#pacman-body");
             document.addEventListener('keydown', e => {
-                if (e.key === 'ArrowUp') y -= 20;
-                if (e.key === 'ArrowDown') y += 20;
-                if (e.key === 'ArrowLeft') x -= 20;
-                if (e.key === 'ArrowRight') x += 20;
-                console.log(x, y);
-                
-                pacman.style.top = y + 'px';
-                pacman.style.left = x + 'px';
+                if(e.key === 'ArrowUp') pacman.style.animation = "moveUp 4s infinite linear";
+                if(e.key === 'ArrowDown') pacman.style.animation = "moveDown 4s infinite linear";
+                if(e.key === 'ArrowLeft') pacman.style.animation = "moveLeft 5s infinite linear";
+                if(e.key === 'ArrowRight') pacman.style.animation = "moveRight 5s infinite linear";
+                if(e.key === undefined) pacman.style.animation = "none";
+                console.log(e.key);
             });
         </script>
     </body>
