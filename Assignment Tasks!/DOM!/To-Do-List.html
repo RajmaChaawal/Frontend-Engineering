@@ -33,13 +33,24 @@
         margin-bottom: 5%;
     }
 
+    #taskInput:focus {
+        box-shadow: inset 0 0 8px 1px grey;
+        background: rgb(255, 254, 254);
+    }
+
     #addBtn {
         padding: 10px 15px;
-        background: #008CFF;
+        background: #9e8837;
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        transition: all 0.3s ease-out;
+        box-shadow: 0 0 8px 1px #887636;
+    }
+
+    #addBtn:hover {
+        background: #008cff;
     }
 
     ul {
@@ -93,13 +104,12 @@
     const list = document.getElementById("taskList");
     const addBtn = document.getElementById("addBtn");
 
-    // Load tasks when page opens
     window.addEventListener("DOMContentLoaded", () => {
         const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
         savedTasks.forEach(text => createTask(text));
     });
 
-    // Save tasks to localStorage
+
     function saveToLocalStorage() {
         const tasks = [];
         const allSpans = document.querySelectorAll("li span");
@@ -107,7 +117,6 @@
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
-    // Create a task <li> using ONLY DOM methods
     function createTask(text) {
         const li = document.createElement("li");
 
@@ -115,25 +124,20 @@
         span.textContent = text;
         li.appendChild(span);
 
-        // buttons container
         const btnDiv = document.createElement("div");
 
-        // EDIT BUTTON
         const editBtn = document.createElement("button");
         editBtn.textContent = "Edit";
         editBtn.className = "btn edit";
 
         editBtn.addEventListener("click", () => {
-            // convert span → input box for editing
             const editInput = document.createElement("input");
             editInput.type = "text";
             editInput.value = span.textContent;
             editInput.style.width = "140px";
 
-            // replace span with input
             li.replaceChild(editInput, span);
 
-            // change EDIT to SAVE
             editBtn.textContent = "Save";
 
             editBtn.onclick = () => {
@@ -141,7 +145,6 @@
                 li.replaceChild(span, editInput);
                 editBtn.textContent = "Edit";
 
-                // restore original functionality
                 editBtn.onclick = null;
                 editBtn.addEventListener("click", () => {
                     const newInput = document.createElement("input");
@@ -166,7 +169,6 @@
 
         btnDiv.appendChild(editBtn);
 
-        // DELETE BUTTON
         const deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
         deleteBtn.className = "btn delete";
@@ -182,7 +184,6 @@
         list.appendChild(li);
     }
 
-    // Add button event
     addBtn.addEventListener("click", () => {
         const task = input.value.trim();
         if (task !== "") {
