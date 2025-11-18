@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Form Validation App</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        padding: 40px;
+        background: #f4f4f4;
+    }
+
+    .form-box {
+        width: 400px;
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin: auto;
+        box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 2px solid #ccc;
+        font-size: 16px;
+    }
+
+    .error {
+        font-size: 14px;
+        color: red;
+        margin-bottom: 10px;
+    }
+
+    .valid {
+        border-color: green !important;
+    }
+
+    .invalid {
+        border-color: red !important;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background: #007bff;
+        color: white;
+        border: none;
+        font-size: 18px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Registration Form</h2>
+
+    <label>Name:</label>
+    <input type="text" id="name">
+    <div id="nameError" class="error"></div>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <div id="emailError" class="error"></div>
+
+    <label>Password:</label>
+    <input type="password" id="password">
+    <div id="passError" class="error"></div>
+
+    <button id="submitBtn">Submit</button>
+</div>
+
+<script>
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+    const passInput = document.getElementById("password");
+
+    const nameErr = document.getElementById("nameError");
+    const emailErr = document.getElementById("emailError");
+    const passErr = document.getElementById("passError");
+
+    const btn = document.getElementById("submitBtn");
+
+    function validateName() {
+        if (nameInput.value.trim() === "") {
+            nameErr.textContent = "Name is required";
+            nameInput.classList.add("invalid");
+            nameInput.classList.remove("valid");
+            return false;
+        }
+        nameErr.textContent = "";
+        nameInput.classList.add("valid");
+        nameInput.classList.remove("invalid");
+        return true;
+    }
+
+    function validateEmail() {
+        const val = emailInput.value.trim();
+        if (val === "") {
+            emailErr.textContent = "Email is required";
+            emailInput.classList.add("invalid");
+            emailInput.classList.remove("valid");
+            return false;
+        }
+        if (!val.includes("@")) {
+            emailErr.textContent = "Email must contain @";
+            emailInput.classList.add("invalid");
+            emailInput.classList.remove("valid");
+            return false;
+        }
+        emailErr.textContent = "";
+        emailInput.classList.add("valid");
+        emailInput.classList.remove("invalid");
+        return true;
+    }
+
+    function validatePassword() {
+        const val = passInput.value.trim();
+        if (val === "") {
+            passErr.textContent = "Password is required";
+            passInput.classList.add("invalid");
+            passInput.classList.remove("valid");
+            return false;
+        }
+        if (val.length < 8) {
+            passErr.textContent = "Password must be at least 8 characters";
+            passInput.classList.add("invalid");
+            passInput.classList.remove("valid");
+            return false;
+        }
+        passErr.textContent = "";
+        passInput.classList.add("valid");
+        passInput.classList.remove("invalid");
+        return true;
+    }
+
+    nameInput.addEventListener("input", validateName);
+    emailInput.addEventListener("input", validateEmail);
+    passInput.addEventListener("input", validatePassword);
+
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        const valid =
+            validateName() &
+            validateEmail() &
+            validatePassword();
+
+        if (valid) {
+            alert("Form Submitted Successfully!");
+        }
+    });
+</script>
+
+</body>
+</html>
