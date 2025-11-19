@@ -7,10 +7,15 @@ This folder contains assignments and practice tasks focused on the Document Obje
 ## 📂 Folder Structure  
 DOM!/
 ├─ Task-01-SelectingNodes/ → Basics of document selection (getElement(s)By…, querySelector)
+
 ├─ Task-02-ModifyingElements/ → Changing text, attributes, CSS styles via JS
+
 ├─ Task-03-EventHandling/ → Listening to click, input, change, keypress events
+
 ├─ Task-04-DOMTraversal-&-Manipulation/ → Navigating parent/child/sibling, creating/removing nodes
+
 ├─ Task-05-DynamicUIUpdates/ → Building interactive mini-apps: modal windows, tabs, accordions
+
 └─ … → Additional tasks applying DOM concepts in real scenarios
 
 *(Adjust folder names and numbers if yours differ.)*
