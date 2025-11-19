@@ -8,9 +8,13 @@ This folder contains assignments and practice tasks focused on asynchronous Java
 
 AsyncJS/
 ├─ Callbacks/ → Basic callbacks and timing functions!
+
 ├─ Promises/ → Converting callbacks to promises, chaining, error handling!
+
 ├─ AsyncAwait (Soon)/ → Using async/await syntax, making sequential & parallel flows!
+
 ├─ API-Requests/ → Fetching data, handling responses, integrating with UI!
+
 └─ … → Additional tasks extending asynchronous JS concepts!
 
 🧑‍💻 How to Contribute or Expand
