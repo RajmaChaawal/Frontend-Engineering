@@ -6,131 +6,274 @@
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=meeting_room" />
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Bitcount+Grid+Double:wght@100..900&family=MedievalSharp&family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
     <style>
-        /* ---------- Base Styles ---------- */
         body {
-            display: flex;
-            flex-wrap: wrap;
-            overflow: hidden;
+            overflow-x: hidden;
+            perspective: 1000;
             height: 100vh;
             width: 100vw;
             margin: 0;
-            border: 0;
-            padding: 0;
-            font-family: 'Quicksand';
-            background: linear-gradient(180deg, rgb(247, 247, 247), rgba(149, 0, 255, 0.618));
+            background: rgb(66, 63, 63);
         }
 
         .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            height: 5vw;
             width: 100%;
-            background: linear-gradient(90deg, violet, rgb(203, 148, 206), rgba(149, 0, 255, 0.618));
-            border-radius: 8px;
-            box-shadow: 0 0 8px 2px rgb(173, 18, 173);
-            padding: 0 5%;
+            height: 10%;
+            background: rgb(37, 35, 35);
+            display: flex;
+            align-items: left;
+            align-items: center;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            border-style: hidden;
+            box-shadow: 0 0 3px 2px rgb(0, 0, 0);
+            animation: fadeIn 1s ease;
         }
 
         #site_title {
-            color: rgb(32, 5, 75);
-            text-transform: uppercase;
-            font-weight: 700;
-            letter-spacing: 1px;
-            flex: 1;
+            width: 70%;
+            display: flex;
+            margin: 0;
+            font-family: Segoe UI;
+            margin-left: 5%;
+            font-weight: 500;
         }
 
-        .nav_btn {
-            font-family: Quicksand;
+        #Watch {
+            color: orange;
+            animation: slideInFromLeft 1s ease;
+        }
+
+        #Party {
+            color: blueviolet;
+            animation: slideInFromRight 1s ease;
+
+        }
+
+        #git-logo {
+            opacity: 0.9;
+            width: 4%;
+            transform: translateX(-30%);
             border: none;
-            border-radius: 8px;
-            padding: 0.5em 1.2em;
-            margin-left: 2em;
-            color: rgb(6, 21, 99);
-            font-weight: 600;
-            font-size: 1em;
-            background: rgba(255, 255, 255, 0.75);
-            box-shadow: 0px 0px 5px rgb(65, 6, 99);
-            transition: all 0.2s ease;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        #git-logo:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+
+        #git-logo:active {
+            transform: scale(0.8) translateX(-30%);
+        }
+
+        .navBtn {
+            border: none;
+            height: 40%;
+            border-radius: 5px;
+            font-family: Segoe UI;
+            font-weight: 400;
+            box-shadow: 0 0 3px 1px black;
+            font-size: 80%;
+            transition: all 0.4s ease;
+        }  
+        
+        #subBtn {
+            transition: all 0.4s ease;
+            width: max-content;
+            background: blueviolet;
+            color: white;
+            animation: slideInFromTop 1s ease;
+        }
+        
+        #loginBtn {
+            background: orange;
+            transition: all 0.4s ease;
+            width: max-content;
+            margin-left:2%;
+            color: white;
+            animation: slideInFromTop 1s ease;
+        }
+        
+        #subBtn:hover {
+            cursor: pointer;
+            background: rgb(107, 34, 176);
+        }
+        
+        #loginBtn:hover {
+            cursor: pointer;
+            background: rgba(225, 149, 8, 0.962);
+        }
+
+        .navBtn:active {
+            box-shadow: none;
+            transform: scale(0.9);
+            justify-content: center;
+        }
+
+        .hero_section {
+            gap: 3%;
+            width: 100%;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .room-menu {
+            position: fixed;
+            width: 100%;
+            height: 10%;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        .room-btn {
+            font-size: 100%;
+            height: 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1%;
+            padding: 2%;
+            border: none;
+            border-radius: 10px;
+            font-family: Segoe UI;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+
+        #rooms {
+            width: fit-content;
+            color: rgb(33, 35, 33);
+            background: rgb(225, 204, 204);
+        }
+
+        #rooms:hover {
+            background: white;
+        }
+
+        #rooms:active {
+            transform: scale(0.9);
+        }
+
+        #new-room {
+            width: max-content;
+            color: rgb(255, 255, 255);
+            background: rgb(24, 123, 24);
+        }
+
+        #new-room:hover {
+            background: rgb(2, 153, 2);
+        }
+
+        #new-room:active {
+            transform: scale(0.9);
+        }
+
+        .cards {
+            margin-top: 5%;
+            width: 20%;
+            height: 50%;
+            background: rgb(37, 35, 35);
+            color: rgb(254, 253, 253);
+            border-radius: 10px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+        }
+
+        .card-title {
+            font-family: system-ui;
+            font-weight: 100;
+        }
+
+        .cards:hover {
+            box-shadow: 0 0 20px 2px black;
+            transform: scale(1.2);
             cursor: pointer;
         }
 
-        .nav_btn:hover {
-            transform: scale(1.1);
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1;}
         }
 
-        /* ---------- Responsive Stylses ---------- */
-
-        /* 🖥️ Laptops / Desktops (≥ 1025px) */
-        @media (min-width: 1025px) {
-            .navbar {
-                height: 4vw;
-                padding: 0 6%;
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
             }
-
-            .nav_btn {
-                font-size: 1em;
-                padding: 0.5em 1.5em;
-            }
-
-            #site_title {
-                font-size: 2em;
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        /* 💻 Tablets (between 601px and 1024px) */
-        @media (max-width: 1024px) and (min-width: 601px) {
-            .navbar {
-                flex-wrap: wrap;
-                justify-content: center;
-                height: 20%;
-                padding: 1em;
+        @keyframes slideInFromRight {
+            from {
+                transform: translateX(200%);
+                opacity: 0;
             }
-
-            #site_title {
-                width: 100%;
-                text-align: center;
-                font-size: 1.8em;
-                margin-bottom: 0.5em;
-            }
-
-            .nav_btn {
-                font-size: 0.95em;
-                padding: 0.6em 1.2em;
-                margin: 0.5em;
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        /* 📱 Phones (≤ 600px) */
-        @media (max-width: 600px) {
-            body {
-                height: 100vh;
-                width: 100vw;
+        @keyframes slideInFromTop {
+            from {
+                transform: scale(150%);
+                transform: translateZ(100%);
             }
-
-            #site_title {
-                font-size: 40%;
+            to {
+                transform: scale(100%);
+                transform: translateZ(0);
             }
-
-            .navbar {
-                height: 10%;
-                font-size: 30%;
-            }
-
-
         }
     </style>
 </head>
-
 <body>
     <nav class="navbar">
-        <h1 id="site_title">WATCHPARTY</h1>
-        <button class="nav_btn">Subscribe +</button>
-        <button class="nav_btn">Login</button>
+        <h1 id="site_title"><p id="Watch">WATCH</p><p id="Party">PARTY</p></h1>
+        <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="git-logo" id="git-logo">
+        <button id="subBtn" class="navBtn">Subscribe +</button>
+        <button id="loginBtn" class="navBtn">Login</button>
     </nav>
-    <main></main>
+    <main class="hero_section">
+        <div id="card 1" class="cards">
+            <img src="" alt="Feature Image 1" class="feature img">
+            <h3 class="card-title" id="">Watch Together</h3>
+        </div>
+        <div id="card 2" class="cards">
+            <img src="" alt="Feature Image 2" class="feature img">
+            <h3 class="card-title">Chat Together</h3>
+        </div>
+        <div id="card 3" class="cards">
+            <img src="" alt="Feature Image 1" class="feature img">
+            <h3 class="card-title" id="">VBrowser</h3>
+        </div>
+        <div id="card 4" class="cards">
+            <img src="" alt="Feature Image 2" class="feature img">
+            <h3 class="card-title">OTT Support</h3>
+        </div>
+    </main>
+    <section class="room-menu">
+        <button id="rooms" class="room-btn"><span class="material-symbols-outlined">meeting_room</span>My Rooms</button>
+        <button id="new-room" class="room-btn">+ New Room</button>
+        
+    </section>
+    <script>
+        
+    </script>
 </body>
 </html>
