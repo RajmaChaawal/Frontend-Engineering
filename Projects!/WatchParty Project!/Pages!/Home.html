@@ -16,9 +16,15 @@
             width: 100vw;
             margin: 0;
             background: rgb(66, 63, 63);
+            perspective: 1000px;
+        }
+
+        main {
+            margin: 0;
         }
 
         .navbar {
+            margin-bottom: 0;
             width: 100%;
             height: 10%;
             background: rgb(37, 35, 35);
@@ -86,7 +92,7 @@
             width: max-content;
             background: blueviolet;
             color: white;
-            animation: slideInFromTop 1s ease;
+            animation: dropFromFront 1s ease;
         }
         
         #loginBtn {
@@ -95,7 +101,7 @@
             width: max-content;
             margin-left:2%;
             color: white;
-            animation: slideInFromTop 1s ease;
+            animation: dropFromFront 1s ease;
         }
         
         #subBtn:hover {
@@ -139,37 +145,42 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 1%;
             padding: 2%;
+            margin: 1%;
             border: none;
             border-radius: 10px;
             font-family: Segoe UI;
             font-weight: 400;
             transition: all 0.3s ease;
+            backface-visibility: hidden;
         }
-
-
+        
+        
         #rooms {
             width: fit-content;
             color: rgb(33, 35, 33);
             background: rgb(225, 204, 204);
+            animation: rotateIn 2s ease;
         }
 
         #rooms:hover {
             background: white;
+            transform: scale(110%);
         }
-
+        
         #rooms:active {
             transform: scale(0.9);
         }
-
+        
         #new-room {
             width: max-content;
             color: rgb(255, 255, 255);
             background: rgb(24, 123, 24);
+            animation: rotateOut 2s alternate ease;
         }
-
+        
         #new-room:hover {
+            transform: scale(110%);
             background: rgb(2, 153, 2);
         }
 
@@ -177,10 +188,23 @@
             transform: scale(0.9);
         }
 
+        #card1 {
+            animation: slideInFromLeft 1.5s ease;
+        }
+
+        #card4 {
+            animation: slideInFromRight 1.5s ease;
+        }
+
+        #card2, #card3 {
+            animation: raiseToFrontLate 1.5s ease;
+        }
+
         .cards {
-            margin-top: 5%;
-            width: 20%;
-            height: 50%;
+            border: none;
+            margin-top: 1%;
+            width: 15%;
+            height: 60%;
             background: rgb(37, 35, 35);
             color: rgb(254, 253, 253);
             border-radius: 10px;
@@ -190,17 +214,46 @@
             flex-direction: column;
             transition: all 0.3s ease;
             box-shadow: 0 0 10px 2px rgb(0, 0, 0);
+            overflow: hidden;
         }
 
         .card-title {
+            color: rgb(255, 214, 137);
+            padding-top: 3%;
+            border: 0;
             font-family: system-ui;
+            font-weight: 500;
+            font-size: 90%;
+        }
+
+        .separator {
+            color: black;
+            margin: 0;
+            padding:0;
             font-weight: 100;
+            font-size: 150%;
+        }
+        
+        .card-desc {
+            margin-bottom: 2%;
+            color: rgb(247, 247, 247);
+            font-family: Segoe UI;
+            font-weight: 100;
+            font-size: 80%;
+            text-align: center;
+
         }
 
         .cards:hover {
             box-shadow: 0 0 20px 2px black;
             transform: scale(1.2);
             cursor: pointer;
+        }
+
+        .feature_img {
+            margin: 0;
+            width: 100%;
+            aspect-ratio: 16/9;
         }
 
         @keyframes fadeIn {
@@ -230,7 +283,7 @@
             }
         }
 
-        @keyframes slideInFromTop {
+        @keyframes dropFromFront {
             from {
                 transform: scale(150%);
                 transform: translateZ(100%);
@@ -240,6 +293,60 @@
                 transform: translateZ(0);
             }
         }
+
+        @keyframes raiseToFrontEarly {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(110%);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(100%);
+
+                opacity: 1;
+            }
+        }
+
+        @keyframes raiseToFrontLate {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            70% {
+                transform: scale(110%);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(100%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                transform: rotateY(180deg);
+                opacity: 0;
+            }
+             to {
+                transform: rotateY(0);
+                opacity: 1;
+             }
+        }
+
+        @keyframes rotateOut {
+            from {
+                transform: rotateY(180deg);
+                opacity: 0;
+            }
+             to {
+                transform: rotateY(0);
+                opacity: 1;
+             }
+        }
+
     </style>
 </head>
 <body>
@@ -250,21 +357,25 @@
         <button id="loginBtn" class="navBtn">Login</button>
     </nav>
     <main class="hero_section">
-        <div id="card 1" class="cards">
-            <img src="" alt="Feature Image 1" class="feature img">
+        <div id="card1" class="cards">
+            <img src="https://plus.unsplash.com/premium_photo-1723791631089-b9af54bd47be?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Feature Image 1" class="feature_img">
             <h3 class="card-title" id="">Watch Together</h3>
+            <h4 class="card-desc">"Stream content with your loved ones."</h4>
         </div>
-        <div id="card 2" class="cards">
-            <img src="" alt="Feature Image 2" class="feature img">
+        <div id="card2" class="cards">
+            <img src="https://images.unsplash.com/photo-1662974770404-468fd9660389?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2hhdHxlbnwwfHwwfHx8MA%3D%3D" alt="Feature Image 2" class="feature_img">
             <h3 class="card-title">Chat Together</h3>
+            <h4 class="card-desc">"Stream content with your loved ones."</h4>
         </div>
-        <div id="card 3" class="cards">
-            <img src="" alt="Feature Image 1" class="feature img">
+        <div id="card3" class="cards">
+            <img src="https://static1.anpoimages.com/wordpress/wp-content/uploads/2023/11/browser-logos-hero-image.jpg" alt="Feature Image 3" class="feature_img">
             <h3 class="card-title" id="">VBrowser</h3>
+            <h4 class="card-desc">"Stream content with your loved ones."</h4>
         </div>
-        <div id="card 4" class="cards">
-            <img src="" alt="Feature Image 2" class="feature img">
+        <div id="card4" class="cards">
+            <img src="https://falloffthewall.com/wp-content/uploads/2023/01/guide-on-what-is-ott-advertising.png" alt="Feature Image 4" class="feature_img">
             <h3 class="card-title">OTT Support</h3>
+            <h4 class="card-desc">"Stream content with your loved ones."</h4>
         </div>
     </main>
     <section class="room-menu">
