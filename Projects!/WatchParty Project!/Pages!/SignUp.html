@@ -3,55 +3,332 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registration Form</title>
+  <title>Sign Up</title>
 </head>
+<style>
+  body {
+    background: rgb(56, 10, 84);
+    font-family: Segoe UI;
+    color: white;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 4%;
+    margin: 0;
+  }
+  .navbar {
+      margin-bottom: 0;
+      width: 100%;
+      height: 10%;
+      background: rgb(37, 35, 35);
+      display: flex;
+      align-items: left;
+      align-items: center;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-style: hidden;
+      box-shadow: 0 0 3px 2px rgb(0, 0, 0);
+      animation: fadeIn 1s ease;
+  }
+  #site_title {
+      width: 70%;
+      display: flex;
+      margin: 0;
+      font-family: Segoe UI;
+      margin-left: 5%;
+      font-weight: 500;
+  }
+  #Watch {
+      color: orange;
+      animation: slideInFromLeft 1s ease;
+  }
+  #Party {
+      color: blueviolet;
+      animation: slideInFromRight 1s ease;
+  }
+  .navBtn {
+      border: none;
+      height: 40%;
+      border-radius: 5px;
+      font-family: Segoe UI;
+      font-weight: 400;
+      box-shadow: 0 0 3px 1px black;
+      font-size: 80%;
+      transition: all 0.4s ease;
+  }  
+  #subBtn {
+      transition: all 0.4s ease;
+      width: max-content;
+      background: blueviolet;
+      color: white;
+      animation: dropFromFront 1s ease;
+  }
+  #loginBtn {
+      background: orange;
+      transition: all 0.4s ease;
+      width: max-content;
+      margin-left:2%;
+      color: white;
+      animation: dropFromFront 1s ease;
+  }
+  #subBtn:hover {
+      cursor: pointer;
+      background: rgb(107, 34, 176);
+  }
+  #loginBtn:hover {
+      cursor: pointer;
+      background: rgba(225, 149, 8, 0.962);
+  }
+  .navBtn:active {
+      box-shadow: none;
+      transform: scale(0.9);
+      justify-content: center;
+  }
+
+  #git-logo {
+      opacity: 0.9;
+      width: 4%;
+      transform: translateX(-30%);
+      border: none;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+  }
+  
+  #git-logo:hover {
+      cursor: pointer;
+      opacity: 1;
+  }
+  
+  #git-logo:active {
+    transform: scale(0.8) translateX(-30%);
+  }
+
+  .form-body {
+    gap: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    margin: 0;
+  }
+
+
+  .form-title {
+    text-align: center;
+  }
+
+  .loginForm {
+    background: blueviolet;
+    height: 70%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px black;  
+    animation: raiseToFrontEarly 2s ease;
+  }
+
+  .signUpForm {
+    background: blueviolet;
+    height: 70%;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 1px black;
+    animation: raiseToFrontEarly 2s ease;
+  }
+
+  .username {
+    margin-left: 10%;
+    width: 78%;
+    height: 6%;
+    border-radius: 3px;
+    border-style: none;
+    animation: raiseToFrontEarly 3s ease;
+  }
+  
+  .email {
+    margin-left: 10%;
+    width: 78%;
+    height: 6%;
+    border-radius: 3px;
+    border-style: none;
+    animation: raiseToFrontEarly 3s ease;
+  }
+  
+  .password {
+    margin-left: 10%;
+    width: 78%;
+    height: 6%;
+    border-radius: 3px;
+    border-style: none;
+    animation: raiseToFrontEarly 3s ease;
+  }
+  
+  #google-login {
+    background: rgb(68, 13, 120);
+    color: white;
+    height: 10%;
+    width: 78%;
+    margin-left: 10%;
+    align-items: center;
+    border-radius: 8px;
+    border-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #google-login:hover {
+    cursor: pointer;
+    background: rgb(52, 3, 88);
+  }
+
+  #google-img {
+    width: 15%;
+  }
+
+  #check-box {
+    margin: 0;
+  }
+  @keyframes fadeIn {
+      from {opacity: 0}
+      to {opacity: 1;}
+  }
+  @keyframes slideInFromLeft {
+      from {
+          transform: translateX(-100%);
+          opacity: 0;
+      }
+      to {
+          transform: translateX(0);
+          opacity: 1;
+      }
+  }
+  @keyframes slideInFromRight {
+      from {
+          transform: translateX(200%);
+          opacity: 0;
+      }
+      to {
+          transform: translateX(0);
+          opacity: 1;
+      }
+  }
+  @keyframes dropFromFront {
+      from {
+          transform: scale(150%);
+          transform: translateZ(100%);
+      }
+      to {
+          transform: scale(100%);
+          transform: translateZ(0);
+      }
+  }
+  @keyframes raiseToFrontEarly {
+      0% {
+          transform: scale(0);
+          opacity: 0;
+      }
+      50% {
+          transform: scale(110%);
+          opacity: 0.5;
+      }
+      100% {
+          transform: scale(100%);
+          opacity: 1;
+      }
+  }
+  @keyframes raiseToFrontLate {
+      0% {
+          transform: scale(0);
+          opacity: 0;
+      }
+      70% {
+          transform: scale(110%);
+          opacity: 0.5;
+      }
+      100% {
+          transform: scale(100%);
+          opacity: 1;
+      }
+  }
+  @keyframes rotateIn {
+      from {
+          transform: rotateY(180deg);
+          opacity: 0;
+      }
+       to {
+          transform: rotateY(0);
+          opacity: 1;
+       }
+  }
+  @keyframes rotateOut {
+      from {
+          transform: rotateY(180deg);
+          opacity: 0;
+      }
+       to {
+          transform: rotateY(0);
+          opacity: 1;
+       }
+  }
+</style>
 <body>
-  <h2>User Registration</h2>
-  <form action="/submit" method="POST" enctype="multipart/form-data">
+  <nav class="navbar">
+    <h1 id="site_title"><p id="Watch">WATCH</p><p id="Party">PARTY</p></h1>
+    <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="git-logo" id="git-logo">
+    <button id="subBtn" class="navBtn">Subscribe +</button>
+    <button id="loginBtn" class="navBtn">Login</button>
+  </nav>
+  <div class="form-body">
+    <div class="signUpForm">
+      <h2  class="form-title">Sign Up</h2>
+      <form action="/submit" method="POST" enctype="multipart/form-data">
+        
+    <label for="fname" class="username">Username:</label><br>
+    <input type="text" id="fname" name="first_name" class="username" required><br><br>
 
-    <label for="fname">First Name:</label>
-    <input type="text" id="fname" name="first_name" required><br><br>
+    <label for="email" class="email">Email:</label><br>
+    <input type="email" id="email" name="email" required class="email"><br><br>
 
-    <label for="lname">Last Name:</label>
-    <input type="text" id="lname" name="last_name" required><br><br>
+    <label for="password" class="password">Password:</label><br>
+    <input type="password" id="password" name="password" minlength="6" required class="password"><br><br>
 
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required><br><br>
+    <label for="password" class="password">Confirm Password:</label><br>
+    <input type="password" id="confirm-password" name="confirm password" minlength="6" required class="password"><br><br><br>
+    
+    <button id="google-login"><img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png" alt="" id="google-img">Login with Google</button><br><br>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" minlength="6" required><br><br>
-
-    <label for="gender">Gender:</label>
-    <input type="radio" name="gender" value="male"> Male
-    <input type="radio" name="gender" value="female"> Female
-    <input type="radio" name="gender" value="other"> Other<br><br>
-
-    <label for="dob">Date of Birth:</label>
-    <input type="date" id="dob" name="dob"><br><br>
-
-    <label for="country">Country:</label>
-    <select id="country" name="country">
-      <option value="">--Select--</option>
-      <option value="india">India</option>
-      <option value="usa">USA</option>
-      <option value="uk">UK</option>
-    </select><br><br>
-
-    <label for="resume">Upload Resume:</label>
-    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx"><br><br>
-
-    <label for="bio">Short Bio:</label><br>
-    <textarea id="bio" name="bio" rows="4" cols="40"></textarea><br><br>
-
-    <label>
-      <input type="checkbox" name="terms" required> I agree to the Terms & Conditions
-    </label><br><br>
-
-    <input type="submit" value="Register">
-    <input type="reset" value="Clear">
-    <progress></progress>
-    </t><p></p>Loading...</p>
-
+   
   </form>
+</div>
+<div class="loginForm">
+  <h2  class="form-title">Login</h2>
+  <form action="/submit" method="POST" enctype="multipart/form-data">
+    
+    <label for="fname" class="username">Username:</label><br>
+    <input type="text" id="fname" name="first_name" class="username" required><br><br>
+    <label for="text" class="username">OR</label><br><br>
+
+    <label for="email" class="email">Email:</label><br>
+    <input type="email" id="email" name="email" required class="email"><br><br><br>
+
+    <label for="password" class="password">Password:</label><br>
+    <input type="password" id="password" name="password" minlength="6" required class="password"><br><br><br>
+
+    
+    <button id="google-login"><img src="https://logos-world.net/wp-content/uploads/2020/09/Google-Symbol.png" alt="" id="google-img">Login with Google</button><br><br>
+
+   
+  </form>
+</div>
+</div>
 </body>
 </html>
