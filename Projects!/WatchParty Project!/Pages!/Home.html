@@ -32,16 +32,17 @@
         .navbar {
             margin-bottom: 0;
             width: 100%;
-            height: 10%;
-            background: linear-gradient(90deg, #1c1b1f, #29272e);
+            height: 12%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
             display: flex;
             align-items: left;
             align-items: center;
+            border: 1px solid black;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
-            border-style: hidden;
-            box-shadow: 0 0 3px 2px rgb(0, 0, 0);
-            animation: dropFromAbove 1s ease;
+            box-shadow: 0 0 9px 2px rgb(0, 0, 0);
+            animation: dropFromAbove 0.5s ease;
         }
 
         #site_title {
@@ -51,18 +52,30 @@
             font-family: Segoe UI;
             margin-left: 5%;
             font-weight: 500;
+            background: linear-gradient(to right, orange, purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
-        #Watch { color: #ff914d; }    
-        #Party { color: #b983ff; }
+        #watchparty {
+            width: 20%;
+            background: linear-gradient(to right, orange, blueviolet);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        
 
         #git-logo {
-            opacity: 0.9;
-            width: 4%;
+            opacity: 0.7;
+            width: 3%;
             transform: translateX(-30%);
             border: none;
             border-radius: 50%;
             transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
         
         #git-logo:hover {
@@ -92,26 +105,29 @@
         #subBtn {
             transition: all 0.4s ease;
             width: max-content;
-            background: linear-gradient(135deg, #9443f4, #7a2de2);
+            background: rgba(178, 132, 221, 0.714);
+            backdrop-filter: blur(3px);
             color: white;
+            border: 1px solid blueviolet;
         }
         
+        
+        #subBtn:hover {
+            cursor: pointer;
+            background: rgba(137, 43, 226, 0.755);
+        }
         #loginBtn {
-            background: linear-gradient(135deg, #ff9a3c, #ff6f00);
+            background: rgba(240, 170, 49, 0.908);
             transition: all 0.3s ease;
             width: max-content;
             margin-left:2%;
             color: white;
-        }
-        
-        #subBtn:hover {
-            cursor: pointer;
-            background: linear-gradient(135deg, #a46bff, #8a4ff2);
+            border: 1px solid rgb(255, 166, 0);
         }
         
         #loginBtn:hover {
             cursor: pointer;
-            background: linear-gradient(135deg, #ffb56b, #ff7a1a);
+            background: rgba(255, 166, 0, 0.807);
         }
 
         .navBtn:active {
@@ -154,17 +170,21 @@
             font-weight: 400;
             transition: all 0.3s ease;
             backface-visibility: hidden;
+            animation: fadeInFromBottom 0.5s ease;
         }
         
         
         #rooms {
             width: fit-content;
-            color: rgb(33, 35, 33);
-            background: rgb(225, 204, 204);
+            color: rgb(253, 252, 252);
+            background: rgb(225, 204, 204, 0.4);
+            backdrop-filter: blur(10%);
+            border: 1px solid whitesmoke;
         }
-
+        
         #rooms:hover {
-            background: white;
+            color: black;
+            background: rgb(255, 255, 255);
             transform: scale(110%);
         }
         
@@ -173,15 +193,19 @@
         }
         
         #new-room {
+            border: 1px solid rgb(14,226,99);
             filter: blur(10%);
             width: max-content;
             color: rgb(255, 255, 255);
-            background: linear-gradient(135deg, #00e676, #00c853);
+            backdrop-filter: blur(10%);
+            background: rgba(14, 226, 99, 0.4);
         }
         
         #new-room:hover {
+            font-weight: 400;
+            color: rgb(4, 72, 36);
             transform: scale(110%);
-            background: linear-gradient(135deg, #5df2b4, #00d463);
+            background: rgb(14,226,99);
         }
         
         #new-room:active {
@@ -189,25 +213,25 @@
         }
 
         #card1 {
-            animation: cascadeIn 1s ease;
+            animation: raiseAbove 0.75s ease;
         }
         #card2 {
-            animation: cascadeIn 1.5s ease;
+            animation: raiseAbove 0.5s ease;
         }
         #card3 {
-            animation: cascadeIn 1.75s ease;
+            animation: raiseAbove 0.5s ease;
         }
         #card4 {
-            animation: cascadeIn 2s ease;
+            animation: raiseAbove 0.75s ease;
 
         }
 
         .cards {
-            border: 1px solid rgba(180, 120, 255, 0.3);
+            border: 1px solid rgba(74, 3, 161, 0.3);
             margin-top: 1%;
             width: 15%;
             height: 60%;
-            background: rgba(130, 71, 255, 0.25);
+            background: rgba(189, 58, 189, 0.3);
             backdrop-filter: blur(10px);
             color: rgb(254, 253, 253);
             border-radius: 12px;
@@ -222,11 +246,10 @@
 
         .card-title {
             color: #ffdca8;   
-            padding-top: 3%;
             border: 0;
             font-family: system-ui;
             font-weight: 500;
-            font-size: 90%;
+            font-size: 100%;
         }
 
         
@@ -241,25 +264,39 @@
         }
 
         .cards:hover {
-            box-shadow: 0 0 20px 2px black;
-            transform: scale(1.1);
+            background: rgba(128, 0, 128, 0.807);
+            box-shadow: 0 0 20px 12px black;
+            transform: scale(1.05);
             cursor: pointer;
         }
 
         .feature_img {
-            transform: translateY(-25%);
+            transform: translateY(-27%);
             width: 98%;
             aspect-ratio: 16/9;
             border-radius: 12px;
+            border: 1px solid purple;
         }
 
-        @keyframes cascadeIn {
-            from {
-                transform: translateX(-100vw);
+
+        @keyframes raiseAbove {
+            from{
+                transform: scale(50%);
                 opacity: 0;
             }
-            to {
-                transform: translateX(0);
+            to{
+                transform: scale(100%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInFromBottom {
+            from{
+                transform: scale(30%) translateY(10vh);
+                opacity: 0;
+            }
+            to{
+                transform: scale(100%) translateY(0);
                 opacity: 1;
             }
         }
@@ -275,11 +312,12 @@
             }
         }
 
+
     </style>
 </head>
 <body>
     <nav class="navbar">
-        <h1 id="site_title"><p id="Watch">WATCH</p><p id="Party">PARTY</p></h1>
+        <h1 id="site_title"><span id="watchparty">WATCHPARTY</span></h1>
         <img src="https://cdn.pixabay.com/photo/2022/01/30/13/33/github-6980894_960_720.png" alt="git-logo" id="git-logo">
         <button id="subBtn" class="navBtn">Subscribe +</button>
         <button id="loginBtn" class="navBtn" onclick="goNext()">Login</button>
