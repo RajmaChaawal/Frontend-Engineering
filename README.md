@@ -10,7 +10,8 @@ Here’s how the contents are organised:
 - /Classwork! → Code and examples explored in class sessions 
 - /Experiments! → Sandbox projects & fun prototypes 
 - /JavaScript-main → Core JavaScript practice and sink-in work 
-- /Projects! → Larger scale frontend builds bringing it all together 
+- /Projects! → Larger scale frontend builds bringing it all together
+- /UI Comps - For regular practice of UI designing and structuring using HTML CSS!
 - README.md → This file 
 
 
