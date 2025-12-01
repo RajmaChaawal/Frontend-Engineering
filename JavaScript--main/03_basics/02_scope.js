@@ -67,4 +67,3 @@ addTwo(5); // Error : cannot access "addTwo" before initialization!
 const addTwo = function(num) {
     return num + 2;    //THIS IS EXPRESSION!
 }
-
